@@ -7,9 +7,33 @@
   <title>Train Scheduler</title>
 </head>
 <body>
+  <div>
+    <table>
+      <thead>
+        <th>Line</th>
+        <th>Destination</th>
+        <th>Frequency</th>
+        <th>Next Arrival</th>
+        <th>Minutes Away</th>
+      </thead>
+      <tbody id="train-data">
+      </tbody>
+    </table>
+  </div>
 
-  
-<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-<script src="app.js"></script>
+  <div>
+    <form>
+      <label for="line">Line</label>
+      <input type="text" id="line">
+      <label for="destination">Destination</label>
+      <input type="text" id="destination">
+      <label for="initial-train">Initial Departure Time</label>
+      <input type="text" id="initial-train">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
