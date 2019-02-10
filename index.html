@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <title>Train Scheduler</title>
 </head>
 <body>
@@ -28,12 +32,13 @@
       <label for="destination">Destination</label>
       <input type="text" id="destination">
       <label for="initial-train">Initial Departure Time</label>
-      <input type="text" id="initial-train">
+      <input type="text" id="initial-train" placeholder="HH:MM (Military time)">
       <input type="submit" value="Submit">
     </form>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-  <script src="app.js"></script>
+  <script src="config.js" type="module"></script>
+  <script src="app.js" type="module"></script>
 </body>
 </html>
