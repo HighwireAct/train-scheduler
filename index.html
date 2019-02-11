@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -11,34 +12,55 @@
   <title>Train Scheduler</title>
 </head>
 <body>
-  <div>
-    <table>
-      <thead>
-        <th>Line</th>
-        <th>Destination</th>
-        <th>Frequency</th>
-        <th>Next Arrival</th>
-        <th>Minutes Away</th>
-      </thead>
-      <tbody id="train-data">
-      </tbody>
-    </table>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">Train Scheduler</h1>
+      <p class="lead">Find Your Ride!</p>
+    </div>
+    
+      <table class="table">
+        <thead>
+          <th>Line</th>
+          <th>Destination</th>
+          <th>Frequency</th>
+          <th>Next Arrival</th>
+          <th>Minutes Away</th>
+        </thead>
+        <tbody id="train-data">
+        </tbody>
+      </table>
+    
+    
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        Add a new train
+      </div>
+      <div class="card-body">
+        <form id="new-train">
+          <div class="form-group">
+            <label for="line">Line</label>
+            <input type="text" class="form-control" id="line">
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination">
+          </div>
+          <div class="form-group">
+            <label for="initial-train">Initial Departure Time</label>
+            <input type="text" class="form-control" id="initial-train" placeholder="HH:MM (Military time)">
+          </div>
+          <div class="form-group">
+            <label for="frequency">Frequency</label>
+            <input type="text" class="form-control" id="frequency" placeholder="Frequency in minutes">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <form>
-      <label for="line">Line</label>
-      <input type="text" id="line">
-      <label for="destination">Destination</label>
-      <input type="text" id="destination">
-      <label for="initial-train">Initial Departure Time</label>
-      <input type="text" id="initial-train" placeholder="HH:MM (Military time)">
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-
+  <script src="moment.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-  <script src="config.js" type="module"></script>
-  <script src="app.js" type="module"></script>
+  <script src="app.js"></script>
 </body>
 </html>
